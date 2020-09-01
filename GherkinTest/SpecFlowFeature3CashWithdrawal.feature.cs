@@ -19,7 +19,7 @@ namespace GherkinTest
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class SpecFlowFeature1AddingNumbersFeature : object, Xunit.IClassFixture<SpecFlowFeature1AddingNumbersFeature.FixtureData>, System.IDisposable
+    public partial class SpecFlowFeature3CashWithdrawalFeature : object, Xunit.IClassFixture<SpecFlowFeature3CashWithdrawalFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace GherkinTest
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "SpecFlowFeature1AddingNumbers.feature"
+#line 1 "SpecFlowFeature3CashWithdrawal.feature"
 #line hidden
         
-        public SpecFlowFeature1AddingNumbersFeature(SpecFlowFeature1AddingNumbersFeature.FixtureData fixtureData, GherkinTest_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public SpecFlowFeature3CashWithdrawalFeature(SpecFlowFeature3CashWithdrawalFeature.FixtureData fixtureData, GherkinTest_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,8 +40,7 @@ namespace GherkinTest
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "", "SpecFlowFeature1AddingNumbers", "\tIn order to avoid silly mistakes\r\n\tAs a math idiot\r\n\tI want to be told the sum o" +
-                    "f two numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "", "SpecFlowFeature3CashWithdrawal", "\tIn order to get money\r\n\tAs a customer\r\n\tI want to withdraw money from an ATM.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -81,14 +80,14 @@ namespace GherkinTest
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Add two numbers")]
-        [Xunit.TraitAttribute("FeatureTitle", "SpecFlowFeature1AddingNumbers")]
-        [Xunit.TraitAttribute("Description", "Add two numbers")]
-        public virtual void AddTwoNumbers()
+        [Xunit.SkippableFactAttribute(DisplayName="Successful withdrawal from an account in credit")]
+        [Xunit.TraitAttribute("FeatureTitle", "SpecFlowFeature3CashWithdrawal")]
+        [Xunit.TraitAttribute("Description", "Successful withdrawal from an account in credit")]
+        public virtual void SuccessfulWithdrawalFromAnAccountInCredit()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful withdrawal from an account in credit", null, tagsOfScenario, argumentsOfScenario);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -110,16 +109,13 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 7
- testRunner.Given("the first number is 50", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have deposited $100 in my account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
- testRunner.And("the second number is 70", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I request $20", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
- testRunner.When("the two numbers are added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 10
- testRunner.Then("the result should be 120", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("$20 should be dispensed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -132,12 +128,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                SpecFlowFeature1AddingNumbersFeature.FeatureSetup();
+                SpecFlowFeature3CashWithdrawalFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                SpecFlowFeature1AddingNumbersFeature.FeatureTearDown();
+                SpecFlowFeature3CashWithdrawalFeature.FeatureTearDown();
             }
         }
     }

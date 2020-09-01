@@ -3,7 +3,6 @@
 	As an employee of SmartHOTEL
 	I want to be told if I should work today
 
-@mytag
 Scenario Outline: I should or should not work today
 	Given today is "<today>"
 	When I ask if I should work today

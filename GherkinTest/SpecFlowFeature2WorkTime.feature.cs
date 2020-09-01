@@ -41,7 +41,7 @@ namespace GherkinTest
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "", "SpecFlowFeature2WorkTime", "\tIn order to tell if I should be working today\r\n\tAs an employee of SmartHOTEL\r\n\tI" +
-                    " want to be told if it I should work today", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    " want to be told if I should work today", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -84,7 +84,6 @@ namespace GherkinTest
         [Xunit.SkippableTheoryAttribute(DisplayName="I should or should not work today")]
         [Xunit.TraitAttribute("FeatureTitle", "SpecFlowFeature2WorkTime")]
         [Xunit.TraitAttribute("Description", "I should or should not work today")]
-        [Xunit.TraitAttribute("Category", "mytag")]
         [Xunit.InlineDataAttribute("Sunday", "No!", new string[0])]
         [Xunit.InlineDataAttribute("Saturday", "No!", new string[0])]
         [Xunit.InlineDataAttribute("Monday", "Yes!", new string[0])]
@@ -94,18 +93,12 @@ namespace GherkinTest
         [Xunit.InlineDataAttribute("Friday", "Yes!", new string[0])]
         public virtual void IShouldOrShouldNotWorkToday(string today, string answer, string[] exampleTags)
         {
-            string[] @__tags = new string[] {
-                    "mytag"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("today", today);
             argumentsOfScenario.Add("answer", answer);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I should or should not work today", null, tagsOfScenario, argumentsOfScenario);
-#line 7
+#line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -125,13 +118,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 8
+#line 7
  testRunner.Given(string.Format("today is \"{0}\"", today), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 9
+#line 8
  testRunner.When("I ask if I should work today", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 10
+#line 9
  testRunner.Then(string.Format("I should be told \"{0}\"", answer), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
