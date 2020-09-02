@@ -80,22 +80,23 @@ namespace GherkinTest
             this.TestTearDown();
         }
         
-        [Xunit.SkippableTheoryAttribute(DisplayName="Successful withdrawal from an account in credit")]
+        [Xunit.SkippableTheoryAttribute(DisplayName="Succesfull or unsuccesfull withdrawal from an account in credit")]
         [Xunit.TraitAttribute("FeatureTitle", "SpecFlowFeature3CashWithdrawal")]
-        [Xunit.TraitAttribute("Description", "Successful withdrawal from an account in credit")]
+        [Xunit.TraitAttribute("Description", "Succesfull or unsuccesfull withdrawal from an account in credit")]
         [Xunit.InlineDataAttribute("100", "20", "20", new string[0])]
         [Xunit.InlineDataAttribute("10", "10", "10", new string[0])]
         [Xunit.InlineDataAttribute("0", "0", "0", new string[0])]
         [Xunit.InlineDataAttribute("10", "0", "0", new string[0])]
         [Xunit.InlineDataAttribute("0", "10", "0", new string[0])]
-        public virtual void SuccessfulWithdrawalFromAnAccountInCredit(string amount1, string amount2, string amount3, string[] exampleTags)
+        [Xunit.InlineDataAttribute("100", "200", "0", new string[0])]
+        public virtual void SuccesfullOrUnsuccesfullWithdrawalFromAnAccountInCredit(string amount1, string amount2, string amount3, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("amount1", amount1);
             argumentsOfScenario.Add("amount2", amount2);
             argumentsOfScenario.Add("amount3", amount3);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful withdrawal from an account in credit", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Succesfull or unsuccesfull withdrawal from an account in credit", null, tagsOfScenario, argumentsOfScenario);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
