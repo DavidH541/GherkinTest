@@ -18,7 +18,7 @@ namespace GherkinTest
         {
             if (account.getBalance() >= amount)
             {
-                account.withdraw(amount);
+                account.debit(amount);
                 cashSlot.setContents(amount);
             }
         }

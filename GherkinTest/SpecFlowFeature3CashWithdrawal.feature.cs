@@ -80,22 +80,13 @@ namespace GherkinTest
             this.TestTearDown();
         }
         
-        [Xunit.SkippableTheoryAttribute(DisplayName="Succesfull or unsuccesfull withdrawal from an account in credit")]
+        [Xunit.SkippableFactAttribute(DisplayName="Succesfull or unsuccesfull withdrawal from an account in credit")]
         [Xunit.TraitAttribute("FeatureTitle", "SpecFlowFeature3CashWithdrawal")]
         [Xunit.TraitAttribute("Description", "Succesfull or unsuccesfull withdrawal from an account in credit")]
-        [Xunit.InlineDataAttribute("100", "20", "20", new string[0])]
-        [Xunit.InlineDataAttribute("10", "10", "10", new string[0])]
-        [Xunit.InlineDataAttribute("0", "0", "0", new string[0])]
-        [Xunit.InlineDataAttribute("10", "0", "0", new string[0])]
-        [Xunit.InlineDataAttribute("0", "10", "0", new string[0])]
-        [Xunit.InlineDataAttribute("100", "200", "0", new string[0])]
-        public virtual void SuccesfullOrUnsuccesfullWithdrawalFromAnAccountInCredit(string amount1, string amount2, string amount3, string[] exampleTags)
+        public virtual void SuccesfullOrUnsuccesfullWithdrawalFromAnAccountInCredit()
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("amount1", amount1);
-            argumentsOfScenario.Add("amount2", amount2);
-            argumentsOfScenario.Add("amount3", amount3);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Succesfull or unsuccesfull withdrawal from an account in credit", null, tagsOfScenario, argumentsOfScenario);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
@@ -118,13 +109,16 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 7
- testRunner.Given(string.Format("I have deposited \"{0}\" in my account", amount1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("my account has been credited with $100", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
- testRunner.When(string.Format("I withdraw \"{0}\"", amount2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I withdraw $200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
- testRunner.Then(string.Format("\"{0}\" should be dispensed", amount3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("$0 should be dispensed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 10
+ testRunner.And("the balance of my account should be $100", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -2,17 +2,24 @@
 	In order to get money
 	As a customer
 	I want to withdraw money from an ATM.
+
+Scenario: Succesfull or unsuccesfull withdrawal from an account in credit
+	Given my account has been credited with $100
+	When I withdraw $200
+	Then $0 should be dispensed
+	And the balance of my account should be $100
 	
-Scenario Outline: Succesfull or unsuccesfull withdrawal from an account in credit
-	Given I have deposited "<amount1>" in my account
-	When I withdraw "<amount2>"
-	Then "<amount3>" should be dispensed
+#Scenario Outline: Succesfull or unsuccesfull withdrawal from an account in credit
+#	Given I have deposited "<deposit>" in my account
+#	When I withdraw "<withdrawal>"
+#	Then "<money>" should be dispensed
+#	And the balance of my account should be "<balance>"
 	
-	Examples: 
-	| amount1 | amount2 | amount3 |
-	| 100     | 20      | 20      |
-	| 10      | 10      | 10      |
-	| 0       | 0       | 0       |
-	| 10      | 0       | 0       |
-	| 0       | 10      | 0       |
-	| 100     | 200     | 0       |
+#	Examples: 
+#	| deposit | withdrawal | withdrawal | balance |
+#	| 100     | 20         | 20         | 80      |
+#	| 10      | 10         | 10         | 0       |
+#	| 0       | 0          | 0          | 0       |
+#	| 10      | 0          | 0          | 10      |
+#	| 0       | 10         | 0          | 0       |
+#	| 100     | 200        | 0          | 100     |

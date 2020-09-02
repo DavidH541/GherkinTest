@@ -10,11 +10,11 @@ namespace GherkinTest
     {
         int balance;
 
-        public void deposit(int amount)
+        public void credit(int amount)
         {
             this.balance += amount;
         }
-        public void withdraw(int amount)
+        public void debit(int amount)
         {
             this.balance -= amount;
         }
