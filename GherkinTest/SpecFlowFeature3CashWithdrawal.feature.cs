@@ -80,14 +80,14 @@ namespace GherkinTest
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Succesfull or unsuccesfull withdrawal from an account in credit")]
+        [Xunit.SkippableFactAttribute(DisplayName="Succesfull withdrawal from an account in credit")]
         [Xunit.TraitAttribute("FeatureTitle", "SpecFlowFeature3CashWithdrawal")]
-        [Xunit.TraitAttribute("Description", "Succesfull or unsuccesfull withdrawal from an account in credit")]
-        public virtual void SuccesfullOrUnsuccesfullWithdrawalFromAnAccountInCredit()
+        [Xunit.TraitAttribute("Description", "Succesfull withdrawal from an account in credit")]
+        public virtual void SuccesfullWithdrawalFromAnAccountInCredit()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Succesfull or unsuccesfull withdrawal from an account in credit", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Succesfull withdrawal from an account in credit", null, tagsOfScenario, argumentsOfScenario);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -112,13 +112,13 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("my account has been credited with $100", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
- testRunner.When("I withdraw $200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I withdraw $20", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
- testRunner.Then("$0 should be dispensed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("$20 should be dispensed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 10
- testRunner.And("the balance of my account should be $100", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the balance of my account should be $80", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
