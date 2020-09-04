@@ -19,7 +19,7 @@ namespace GherkinTest
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class SpecFlowFeature4ReservationMessageFeature : object, Xunit.IClassFixture<SpecFlowFeature4ReservationMessageFeature.FixtureData>, System.IDisposable
+    public partial class SpecFlowFeature5ResponseInDBFeature : object, Xunit.IClassFixture<SpecFlowFeature5ResponseInDBFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace GherkinTest
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "SpecFlowFeature4ReservationMessage.feature"
+#line 1 "SpecFlowFeature5ResponseInDB.feature"
 #line hidden
         
-        public SpecFlowFeature4ReservationMessageFeature(SpecFlowFeature4ReservationMessageFeature.FixtureData fixtureData, GherkinTest_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public SpecFlowFeature5ResponseInDBFeature(SpecFlowFeature5ResponseInDBFeature.FixtureData fixtureData, GherkinTest_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,8 +40,8 @@ namespace GherkinTest
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "", "SpecFlowFeature4ReservationMessage", "\tIn order to know about a new reservation\r\n\tAs a hotel/SmartHOTEL developer\r\n\tI w" +
-                    "ant a message to notify me about the new reservation", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "", "SpecFlowFeature5ResponseInDB", "\tIn order to check if the reservation went through\r\n\tAs a hotel/SmartHOTEL develo" +
+                    "per\r\n\tI want a response from the DB", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -81,21 +81,14 @@ namespace GherkinTest
             this.TestTearDown();
         }
         
-        [Xunit.SkippableTheoryAttribute(DisplayName="Recieve reservation message")]
-        [Xunit.TraitAttribute("FeatureTitle", "SpecFlowFeature4ReservationMessage")]
-        [Xunit.TraitAttribute("Description", "Recieve reservation message")]
-        [Xunit.InlineDataAttribute("123", "5", "637347865177017437", "2", "The reservation has passed! 123 637347865177017437", new string[0])]
-        [Xunit.InlineDataAttribute("456", "5", "637347865177017890", "8", "The reservation has not passed!", new string[0])]
-        public virtual void RecieveReservationMessage(string hotelID, string availableRooms, string extID, string reservationRooms, string message, string[] exampleTags)
+        [Xunit.SkippableFactAttribute(DisplayName="response in DB from a reservation")]
+        [Xunit.TraitAttribute("FeatureTitle", "SpecFlowFeature5ResponseInDB")]
+        [Xunit.TraitAttribute("Description", "response in DB from a reservation")]
+        public virtual void ResponseInDBFromAReservation()
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("hotelID", hotelID);
-            argumentsOfScenario.Add("availableRooms", availableRooms);
-            argumentsOfScenario.Add("ExtID", extID);
-            argumentsOfScenario.Add("reservationRooms", reservationRooms);
-            argumentsOfScenario.Add("message", message);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Recieve reservation message", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("response in DB from a reservation", null, tagsOfScenario, argumentsOfScenario);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -117,13 +110,13 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 7
- testRunner.Given(string.Format("hotel {0} has {1} available rooms", hotelID, availableRooms), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("there is a hotel <HotelID>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
- testRunner.When(string.Format("a new reservation {0} is made with {1} rooms", extID, reservationRooms), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("there is a reservation <ExternalID>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
- testRunner.Then(string.Format("I should recieve a message {0}", message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I expect a response in the DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -136,12 +129,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                SpecFlowFeature4ReservationMessageFeature.FeatureSetup();
+                SpecFlowFeature5ResponseInDBFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                SpecFlowFeature4ReservationMessageFeature.FeatureTearDown();
+                SpecFlowFeature5ResponseInDBFeature.FeatureTearDown();
             }
         }
     }

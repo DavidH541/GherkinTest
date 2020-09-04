@@ -1,6 +1,6 @@
 ﻿Feature: SpecFlowFeature4ReservationMessage
 	In order to know about a new reservation
-	As a hotel/a SmartHOTEL developer
+	As a hotel/SmartHOTEL developer
 	I want a message to notify me about the new reservation
 
 Scenario Outline: Recieve reservation message
