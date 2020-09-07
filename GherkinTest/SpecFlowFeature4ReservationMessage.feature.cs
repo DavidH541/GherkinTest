@@ -84,15 +84,18 @@ namespace GherkinTest
         [Xunit.SkippableTheoryAttribute(DisplayName="Recieve reservation message")]
         [Xunit.TraitAttribute("FeatureTitle", "SpecFlowFeature4ReservationMessage")]
         [Xunit.TraitAttribute("Description", "Recieve reservation message")]
-        [Xunit.InlineDataAttribute("123", "637347865177017437", "2", "The reservation has passed! 123 637347865177017437", new string[0])]
-        [Xunit.InlineDataAttribute("456", "637347865177017890", "8", "The reservation has not passed!", new string[0])]
-        public virtual void RecieveReservationMessage(string hotelID, string extID, string reservationRooms, string message, string[] exampleTags)
+        [Xunit.InlineDataAttribute("123", "637347865177017437", "1", "0", "The reservation has passed! 123 637347865177017437", new string[0])]
+        [Xunit.InlineDataAttribute("456", "637347865177017890", "0", "1", "The reservation has passed! 456 637347865177017890", new string[0])]
+        [Xunit.InlineDataAttribute("123", "637347865177017438", "3", "0", "The reservation has not passed! 123 637347865177017438", new string[0])]
+        [Xunit.InlineDataAttribute("456", "637347865177017891", "0", "3", "The reservation has not passed! 456 637347865177017891", new string[0])]
+        public virtual void RecieveReservationMessage(string hotelID, string extID, string kingRooms, string twinRooms, string message, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("hotelID", hotelID);
             argumentsOfScenario.Add("ExtID", extID);
-            argumentsOfScenario.Add("reservationRooms", reservationRooms);
+            argumentsOfScenario.Add("KingRooms", kingRooms);
+            argumentsOfScenario.Add("TwinRooms", twinRooms);
             argumentsOfScenario.Add("message", message);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Recieve reservation message", null, tagsOfScenario, argumentsOfScenario);
 #line 6
@@ -119,7 +122,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given(string.Format("hotel {0} has available rooms", hotelID), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
- testRunner.When(string.Format("a new reservation {0} is made with {1} rooms", extID, reservationRooms), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("a new reservation {0} is made with {1} KingRooms and {2} TwinRooms", extID, kingRooms, twinRooms), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
  testRunner.Then(string.Format("I should recieve a message {0}", message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

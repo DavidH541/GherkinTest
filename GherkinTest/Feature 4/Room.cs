@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GherkinTest.Feature_4
 {
-    class Room
+    public class Room
     {
         public bool available = true;
         public int amountBooked;

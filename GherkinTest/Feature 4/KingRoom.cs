@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GherkinTest.Feature_4
 {
-    class KingRoom : Room
+    public class KingRoom : Room
     {
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GherkinTest.Feature_4
 {
-    class Hotel
+    public class Hotel
     {
         public Room[] Rooms = new Room[0];
         public int hotelID { get; }
@@ -15,6 +15,7 @@ namespace GherkinTest.Feature_4
         {
             this.hotelID = hotelID;
         }
+        
 
         public void bookRooms(int rooms, Room typeRoom)
         {
@@ -52,6 +53,19 @@ namespace GherkinTest.Feature_4
             for (int i = 0; i < Rooms.Length; i++)
             {
                 if (Rooms[i].available)
+                {
+                    x++;
+                }
+            }
+            return x;
+        }
+
+        public int availableRooms(Room typeRoom)
+        {
+            int x = 0;
+            for (int i = 0; i < Rooms.Length; i++)
+            {
+                if (Rooms[i].GetType().Equals(typeRoom.GetType()) && Rooms[i].available)
                 {
                     x++;
                 }

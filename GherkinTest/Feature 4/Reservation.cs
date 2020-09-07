@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GherkinTest.Feature_4
 {
-    class Reservation
+    public class Reservation
     {
         string ExtID;
         Hotel hotel;
@@ -15,10 +15,12 @@ namespace GherkinTest.Feature_4
 
         public Reservation(string extID, Hotel hotel, int KingRooms, int TwinRooms)
         {
-            if (hotel.availableRooms() >= KingRooms + TwinRooms)
-            {
-                this.ExtID = extID;
-                this.hotel = hotel;
+            this.ExtID = extID;
+            this.hotel = hotel;
+
+            if (hotel.availableRooms(new KingRoom()) >= KingRooms
+             && hotel.availableRooms(new TwinRoom()) >= TwinRooms)
+            {                
                 this.passed = true;
                 hotel.bookRooms(KingRooms, new KingRoom());
                 hotel.bookRooms(TwinRooms, new TwinRoom());
@@ -30,7 +32,7 @@ namespace GherkinTest.Feature_4
             if (this.passed)
                 return "The reservation has passed!" + " " + hotel.hotelID + " " + ExtID;
             else
-                return "The reservation has not passed!";
+                return "The reservation has not passed!" + " " + hotel.hotelID + " " + ExtID;
         }
     }
 }

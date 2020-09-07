@@ -8,9 +8,9 @@ Scenario Outline: Recieve reservation message
 	When a new reservation <ExtID> is made with <KingRooms> KingRooms and <TwinRooms> TwinRooms
 	Then I should recieve a message <message>
 
-	Examples: 
-	| hotelID | ExtID              | KingRooms | TwinRooms | message                                            |
-	| 123     | 637347865177017437 | 1         | 0         | The reservation has passed! 123 637347865177017437 |
-	| 456     | 637347865177017890 | 0         | 1         | The reservation has not passed!                    |
-
-	 
+	Examples:
+		| hotelID | ExtID              | KingRooms | TwinRooms | message                                                |
+		| 123     | 637347865177017437 | 1         | 0         | The reservation has passed! 123 637347865177017437     |
+		| 456     | 637347865177017890 | 0         | 1         | The reservation has passed! 456 637347865177017890     |
+		| 123     | 637347865177017438 | 3         | 0         | The reservation has not passed! 123 637347865177017438 |
+		| 456     | 637347865177017891 | 0         | 3         | The reservation has not passed! 456 637347865177017891 |

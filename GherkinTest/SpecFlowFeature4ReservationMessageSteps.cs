@@ -8,13 +8,9 @@ namespace GherkinTest
     [Binding]
     public class SpecFlowFeature4ReservationMessageSteps
     {
-        Hotel hotel;
-        string passed;
-
-        [Given(@"hotel (.*) has available rooms")]
-        public void GivenHotelHasAvailableRooms(int p0)
+        public void BuildHotel(int hotelID)
         {
-            hotel = new Hotel(p0);
+            Hotel hotel = new Hotel(hotelID);
             Room kingRoom1 = new KingRoom();
             Room kingRoom2 = new KingRoom();
             Room twinRoom1 = new TwinRoom();
@@ -23,8 +19,17 @@ namespace GherkinTest
             hotel.addRoom(kingRoom2);
             hotel.addRoom(twinRoom1);
             hotel.addRoom(twinRoom2);
-            hotel.availableRooms().Should().BeGreaterThan(0);
-            hotel.availableRooms().Should().Be(4);
+            this.hotel = hotel;
+        }
+
+        Hotel hotel;
+        string passed;
+
+        [Given(@"hotel (.*) has available rooms")]
+        public void GivenHotelHasAvailableRooms(int p0)
+        {
+            BuildHotel(p0);
+            hotel.availableRooms().Should().BeGreaterThan(0);            
         }
 
         [When(@"a new reservation (.*) is made with (.*) KingRooms and (.*) TwinRooms")]
