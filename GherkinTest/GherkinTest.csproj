@@ -158,7 +158,6 @@
     <Compile Include="SpecFlowFeature1AddingNumbersSteps.cs" />
     <Compile Include="SpecFlowFeature2WorkTimeSteps.cs" />
     <Compile Include="SpecFlowFeature3CashWithdrawalSteps.cs" />
-    <Compile Include="SpecFlowFeature4.1ReservatingRoomSteps.cs" />
     <Compile Include="SpecFlowFeature4ReservationMessageSteps.cs" />
     <Compile Include="Feature 5\WebClientGet.cs" />
     <Compile Include="SpecFlowFeature5ResponseInDBSteps.cs" />
@@ -169,7 +168,6 @@
     <None Include="SpecFlowFeature1AddingNumbers.feature" />
     <None Include="SpecFlowFeature2WorkTime.feature" />
     <None Include="SpecFlowFeature3CashWithdrawal.feature" />
-    <None Include="SpecFlowFeature4.1ReservatingRoom.feature" />
     <None Include="SpecFlowFeature4ReservationMessage.feature" />
     <None Include="SpecFlowFeature5ResponseInDB.feature" />
   </ItemGroup>
