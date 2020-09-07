@@ -84,14 +84,13 @@ namespace GherkinTest
         [Xunit.SkippableTheoryAttribute(DisplayName="Recieve reservation message")]
         [Xunit.TraitAttribute("FeatureTitle", "SpecFlowFeature4ReservationMessage")]
         [Xunit.TraitAttribute("Description", "Recieve reservation message")]
-        [Xunit.InlineDataAttribute("123", "5", "637347865177017437", "2", "The reservation has passed! 123 637347865177017437", new string[0])]
-        [Xunit.InlineDataAttribute("456", "5", "637347865177017890", "8", "The reservation has not passed!", new string[0])]
-        public virtual void RecieveReservationMessage(string hotelID, string availableRooms, string extID, string reservationRooms, string message, string[] exampleTags)
+        [Xunit.InlineDataAttribute("123", "637347865177017437", "2", "The reservation has passed! 123 637347865177017437", new string[0])]
+        [Xunit.InlineDataAttribute("456", "637347865177017890", "8", "The reservation has not passed!", new string[0])]
+        public virtual void RecieveReservationMessage(string hotelID, string extID, string reservationRooms, string message, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("hotelID", hotelID);
-            argumentsOfScenario.Add("availableRooms", availableRooms);
             argumentsOfScenario.Add("ExtID", extID);
             argumentsOfScenario.Add("reservationRooms", reservationRooms);
             argumentsOfScenario.Add("message", message);
@@ -117,7 +116,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 7
- testRunner.Given(string.Format("hotel {0} has {1} available rooms", hotelID, availableRooms), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("hotel {0} has available rooms", hotelID), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
  testRunner.When(string.Format("a new reservation {0} is made with {1} rooms", extID, reservationRooms), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

@@ -8,13 +8,21 @@ namespace GherkinTest.Feature_4
 {
     class Room
     {
-        Hotel hotel;
-        string roomType;
+        public bool available = true;
+        public int amountBooked;
 
-        public Room(Hotel hotel, string roomtype)
+        public string book()
         {
-            this.hotel = hotel;
-            this.roomType = roomtype;
+            if (!available)
+            {
+                return "This room is not available!";
+            }
+            else
+            {
+                available = false;
+                amountBooked++;
+                return "Booked this room!";
+            }
         }
     }
-}//WIP
+}

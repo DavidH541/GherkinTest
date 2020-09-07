@@ -11,20 +11,20 @@ namespace GherkinTest.Feature_4
     {
         string ExtID;
         Hotel hotel;
-        int amountOfRooms;
         bool passed = false;
 
-        public Reservation(string extID, Hotel hotel1, int amountOfRooms1)
+        public Reservation(string extID, Hotel hotel, int KingRooms, int TwinRooms)
         {
-            if (hotel1.availableRooms >= amountOfRooms1)
+            if (hotel.availableRooms() >= KingRooms + TwinRooms)
             {
                 this.ExtID = extID;
-                this.hotel = hotel1;
-                this.amountOfRooms = amountOfRooms1;
+                this.hotel = hotel;
                 this.passed = true;
-            } 
+                hotel.bookRooms(KingRooms, new KingRoom());
+                hotel.bookRooms(TwinRooms, new TwinRoom());
+            }
         }
-        
+
         public string Passed()
         {
             if (this.passed)
