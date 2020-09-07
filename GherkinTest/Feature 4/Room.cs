@@ -11,17 +11,12 @@ namespace GherkinTest.Feature_4
         public bool available = true;
         public int amountBooked;
 
-        public string book()
+        public void book()
         {
-            if (!available)
-            {
-                return "This room is not available!";
-            }
-            else
+            if (available)
             {
                 available = false;
                 amountBooked++;
-                return "Booked this room!";
             }
         }
     }
