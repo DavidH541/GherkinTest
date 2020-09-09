@@ -15,7 +15,20 @@ namespace GherkinTest.Feature_4
         {
             this.hotelID = hotelID;
         }
-        
+
+        public static void BuildHotel(int hotelID)
+        {
+            Hotel hotel = new Hotel(hotelID);
+            Room kingRoom1 = new KingRoom();
+            Room kingRoom2 = new KingRoom();
+            Room twinRoom1 = new TwinRoom();
+            Room twinRoom2 = new TwinRoom();
+            hotel.addRoom(kingRoom1);
+            hotel.addRoom(kingRoom2);
+            hotel.addRoom(twinRoom1);
+            hotel.addRoom(twinRoom2);            
+        }
+
 
         public void bookRooms(int rooms, Room typeRoom)
         {

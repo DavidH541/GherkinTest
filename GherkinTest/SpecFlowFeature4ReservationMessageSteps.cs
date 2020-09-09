@@ -7,28 +7,14 @@ namespace GherkinTest
 {
     [Binding]
     public class SpecFlowFeature4ReservationMessageSteps
-    {
-        public void BuildHotel(int hotelID)
-        {
-            Hotel hotel = new Hotel(hotelID);
-            Room kingRoom1 = new KingRoom();
-            Room kingRoom2 = new KingRoom();
-            Room twinRoom1 = new TwinRoom();
-            Room twinRoom2 = new TwinRoom();
-            hotel.addRoom(kingRoom1);
-            hotel.addRoom(kingRoom2);
-            hotel.addRoom(twinRoom1);
-            hotel.addRoom(twinRoom2);
-            this.hotel = hotel;
-        }
-
+    {     
         Hotel hotel;
         string passed;
 
         [Given(@"hotel (.*) has available rooms")]
         public void GivenHotelHasAvailableRooms(int p0)
         {
-            BuildHotel(p0);
+            Hotel.BuildHotel(p0);
             hotel.availableRooms().Should().BeGreaterThan(0);            
         }
 
