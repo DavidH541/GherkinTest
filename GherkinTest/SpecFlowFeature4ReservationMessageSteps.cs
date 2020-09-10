@@ -14,7 +14,7 @@ namespace GherkinTest
         [Given(@"hotel (.*) has available rooms")]
         public void GivenHotelHasAvailableRooms(int p0)
         {
-            Hotel.BuildHotel(p0);
+            hotel = Hotel.BuildHotel(p0);
             hotel.availableRooms().Should().BeGreaterThan(0);            
         }
 

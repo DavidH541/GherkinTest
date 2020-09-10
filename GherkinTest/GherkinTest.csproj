@@ -172,6 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Default.srprofile" />
     <None Include="packages.config" />
     <None Include="SpecFlowFeature1AddingNumbers.feature" />
     <None Include="SpecFlowFeature2WorkTime.feature" />
