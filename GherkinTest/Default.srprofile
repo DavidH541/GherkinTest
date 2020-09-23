@@ -5,11 +5,7 @@
   <!-- For collecting by a SpecRun server update and enable the following element. For using the 
       collected statistics, set testSchedulingMode="Adaptive" attribute on the <Execution> element.
     <Server serverUrl="http://specrunserver:6365" publishResults="true" />
-  -->
-  <Report>
-    <Template name="CustomReportTemplate_1.cshtml" outputName="Report1.html" copyAlsoToBaseFolder="true"/>
-    <Template name="CustomReportTemplate_2.cshtml" outputName="Report2.html" copyAlsoToBaseFolder="true"/>
-  </Report>
+  -->  
   <TestAssemblyPaths>
     <TestAssemblyPath>GherkinTest.dll</TestAssemblyPath>
   </TestAssemblyPaths>
